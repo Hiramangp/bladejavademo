@@ -15,10 +15,10 @@ function loadDoc() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("dt").innerText =
-      JSON.parse(this.responseText).payload.msg;
+      JSON.parse(this.responseText).payload;
     }
   };
-  xhttp.open("GET", "", true);
+  xhttp.open("GET", "http://bladejavademo.ap-south-1.elasticbeanstalk.com/hi", true);
   xhttp.send();
 }
 </script>
