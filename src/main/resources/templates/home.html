@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
 </head>
-<body onload="loadDoc();">
+<body>
     <h1>current time <span id="dt"></span></h1>
 
 <script>
@@ -21,6 +21,9 @@ function loadDoc() {
   xhttp.open("GET", "http://bladejavademo.ap-south-1.elasticbeanstalk.com/hi", true);
   xhttp.send();
 }
+setInterval(function(){
+        loadDoc();
+    },1000);
 </script>
 </body>
 </html>
