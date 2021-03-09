@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - chmod u=rwx,go=r gradlew
+  build:
+    commands:
+      - ./gradlew clean build
+  post_build:
+    commands:
+      - chmod -R u=rwx,go=r build
+      - mkdir deploy
+      - cp -rf build/libs/awscpdemo-all.jar deploy/
+      - cp appspec.yml deploy/
+      - cp -rf scripts/*.sh deploy/
+artifacts:
+  files:
+    - deploy/*
+   # - build/libs/awscpdemo-all.jar
+   # - scripts/*.sh
+   # - appspec.yml
+  discard-paths: yes
