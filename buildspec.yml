@@ -14,13 +14,13 @@ phases:
     commands:
       - chmod -R u=rwx,go=r build
       - mkdir deploy
-      - cp -rf build/libs/awscpdemo-all.jar deploy/
+      - cp -rf build/libs/bladejavademo-all.jar deploy/
       - cp appspec.yml deploy/
       - cp -rf scripts/*.sh deploy/
 artifacts:
   files:
     - deploy/*
-   # - build/libs/awscpdemo-all.jar
+   # - build/libs/bladejavademo-all.jar
    # - scripts/*.sh
    # - appspec.yml
   discard-paths: yes
