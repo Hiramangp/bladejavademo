@@ -8,10 +8,10 @@ import com.blade.mvc.ui.ModelAndView;
 import com.blade.mvc.annotation.JSON;
 import com.blade.mvc.ui.RestResponse;
 
-@Path("/home")
+@Path("/")
 public class AppController {
     
-    @GetRoute("/welcome")
+    @GetRoute("/")
     public ModelAndView welcome(){
         ModelAndView mView = new ModelAndView("home.html");
         return mView;
